@@ -32,35 +32,6 @@ RoboMaster 2026 赛季步兵机器人下位机控制固件，基于 STM32F407 + 
 > 若你的 Keil 编译报大量错误，请确认已安装 AC5，或在
 > `Options for Target → Target → ARM Compiler` 中切换并迁移到 AC6。
 
-<<<<<<< HEAD
-## 快速开始
-
-### 方式一：直接编译（推荐，无需 CubeMX）
-
-```bash
-git clone <your-repo-url>
-```
-
-1. 用 Keil MDK 打开 `MDK-ARM/project.uvprojx`；
-2. `Project → Build`（F7）编译；
-3. 连接 ST-Link / J-Link，`Flash → Download`（F8）烧录。
-
-因为 `Drivers/` 已经入库，这一步**完全不需要打开 CubeMX**。
-
-### 方式二：修改硬件配置后重新生成
-
-仅当你要改引脚 / 时钟 / 外设时才需要：
-
-1. 用 **CubeMX 6.16.0** 打开 `project.ioc`（确保已安装 **FW_F4 V1.28.3**）；
-2. 修改配置后点击 `GENERATE CODE`；
-3. 重新生成只会改动 `Core/` 和 `Drivers/`，`User/` 下的业务代码不受影响。
-
-> ⚠️ CubeMX 重新生成后，偶尔会重置 Keil 的头文件搜索路径。若重新生成后编译报「找不到头文件」，
-> 请到 `Options for Target → C/C++ → Include Paths` 确认以下 5 个路径仍在：
-> `../User/BSP`、`../User/Driver`、`../User/Algorithm`、`../User/Control`、`../User/App`。
-
-=======
->>>>>>> d3eeafb4d3db6ff019e665a574fac925df573e83
 ## 软件架构
 
 ```
